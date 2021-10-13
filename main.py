@@ -1,5 +1,6 @@
 #Problema 1
 def get_largest_prime_below(n):
+    #returneaza cel mai mare numar prim mai mic decat un numar dat
     cel_mai_mare_div_prim = 0
     for d in range(2,n):
         nrdiv = 0
@@ -11,12 +12,13 @@ def get_largest_prime_below(n):
     return cel_mai_mare_div_prim
 
 def test_get_largest_prime_below():
-    n = int(input("introduceti numarul n = "))
-    print(get_largest_prime_below(n))
+    assert get_largest_prime_below(15) == 13
+    assert get_largest_prime_below(25) == 23
 
 
 #Problema 5
 def is_palindrome(n) -> bool:
+    #verifica daca un numar este palindrom
     aux = n
     x = 0
     while aux:
@@ -27,14 +29,13 @@ def is_palindrome(n) -> bool:
     else:
         return False
 
-
 def test_is_palindrome():
-    n = int(input("n = "))
-    print(is_palindrome(n))
-
+    assert is_palindrome(1221) == True
+    assert is_palindrome(345) == False
 
 #Problema 6
 def is_superprime(n) -> bool:
+    #verifica daca un numar este superprim sau nu
     while n:
         nrdiv = 0
         for i in range(2,n):
@@ -46,21 +47,23 @@ def is_superprime(n) -> bool:
     return True
 
 def test_is_superprime():
-    n = int(input("n = "))
-    print(is_superprime(n))
-
+    assert is_superprime(237) == False
+    assert is_superprime(233) == True
 
 def main():
     a=int(input("Problema:"))
     if(a==1):
     #largest prime below
-        test_get_largest_prime_below()
+        n = int(input("introduceti numarul n = "))
+        print(get_largest_prime_below(n))
     if(a==5):
     #is palindrome
-        test_is_palindrome()
+        n = int(input("n = "))
+        print(is_palindrome(n))
     if(a==6):
     #is superprime
-        test_is_superprime()
+        n = int(input("n = "))
+        print(is_superprime(n))
 
 
 if __name__ == '__main__':
